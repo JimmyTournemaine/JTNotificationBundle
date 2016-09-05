@@ -1,0 +1,26 @@
+services:
+
+    jt_notification.factory:
+        class: JT\NotificationBundle\Factory\NotificationFactory
+        arguments: ["@jt_notification.builder"]
+    
+    jt_notification.builder:
+        class: JT\NotificationBundle\Builder\NotificationBuilder
+        arguments: ["@router"]
+        
+    jt_notification.notification_listener:
+        class: JT\NotificationBundle\EventListener\NotificationListener
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: postPersist }
+            
+    jt_notification.helper:
+        class: JT\NotificationBundle\Helper\NotificationHelper
+        arguments: ["@jt_notification.factory", "@doctrine.orm.entity_manager"]
+
+    jt_notification.twig_extension:
+        class: JT\NotificationBundle\Twig\NotificationExtension
+        arguments: ["@doctrine.orm.entity_manager", "@security.token_storage", "%jt_notification.limit%"]
+        public: false
+        tags:
+            - { name: twig.extension }

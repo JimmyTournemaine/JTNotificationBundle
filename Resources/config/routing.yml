@@ -1,0 +1,3 @@
+jt_notification_open:
+    path:     /{id}/open
+    defaults: { _controller: "JTNotificationBundle:Notification:open" } 

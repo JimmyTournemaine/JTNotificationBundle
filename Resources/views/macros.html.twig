@@ -1,0 +1,33 @@
+{% macro notification_start(notification, opened, openedAt) %}
+    {% if notification.link %}
+    	<a class="jt-notification {% if opened %}opened{% endif %}" href="{{ notification.link }}">
+    {% else %}
+    	<div class="jt-notification {% if opened %}opened{% endif %}">
+    {% endif %}
+{% endmacro %}
+
+{% macro notification_end(notification, opened, openedAt) %}
+    {% if notification.link %}</a>{% else %}</div>{% endif %}
+{% endmacro %}
+
+{% macro icon_widget(icon, options) %}
+    {% if icon %}
+		{% if options['type'] == 'icon' %}
+        	<i class="{{ options['prefix'] }} {{ options['prefix'] }}-{{ icon }}">
+        		<span class="sr-only">{{ options['alt']|trans(options['trans_parameters'], options['trans_domain']) }}</span>
+        	</i>
+       	{% elseif options['type'] == 'image' %}
+			<img alt="{{ options['alt'] }}" src="{{ icon }}">
+		{% else %}
+			{{ icon }}
+		{% endif %}
+    {% endif %}
+{% endmacro %}
+
+{% macro title_widget(title, options) %}
+<h3>{{ title|trans(options['trans_parameters'], options['trans_domain']) }}</h3>
+{% endmacro %}
+
+{% macro description_widget(desc, options) %}
+<p>{{ desc|trans(options['trans_parameters'], options['trans_domain']) }}</p>
+{% endmacro %}

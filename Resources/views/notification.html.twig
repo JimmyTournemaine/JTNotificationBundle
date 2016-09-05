@@ -1,0 +1,17 @@
+{% import "JTNotificationBundle::macros.html.twig" as macro %}
+{% for notificationArray in notifications %}
+    {% set notification = notificationArray[0] %}
+    {% set opened = notificationArray['opened'] %}
+    {% set openedAt = notificationArray['openedAt'] %}
+    {{ macro.notification_start(notification, opened, openedAt) }}
+	{% if notification.icon %}
+        {{ macro.icon_widget(notification.icon, notification.iconOptions) }}
+    {% endif %}
+    {{ macro.title_widget(notification.title, notification.titleOptions) }}
+    {% if notification.description %}
+        {{ macro.description_widget(notification.description, notification.descriptionOptions) }}
+    {% endif %}
+    {{ macro.notification_end(notification, opened, openedAt) }}
+{% else %}
+	<p>{{ 'none'|trans({}, "JTNotificationBundle") }}</p>
+{% endfor %}
