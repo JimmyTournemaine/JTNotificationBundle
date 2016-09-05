@@ -1,5 +1,7 @@
 #Installation
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/2af01595-31e3-4c14-a6be-df3d949a6c6c/big.png)](https://insight.sensiolabs.com/projects/2af01595-31e3-4c14-a6be-df3d949a6c6c)
+
 ##Step 1: Download the Bundle
 
 Open a command console, enter your project directory and execute the
