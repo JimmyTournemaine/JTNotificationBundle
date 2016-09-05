@@ -11,7 +11,7 @@ class NotificationController extends Controller
         $em = $this->getDoctrine()->getManager();
         $className = $this->getParameter('jt_notification.class');
         $notification = $em->getRepository($className)->find($id);
-        if(null == $notification){
+        if(null === $notification){
             throw $this->createNotFoundException();
         }
 

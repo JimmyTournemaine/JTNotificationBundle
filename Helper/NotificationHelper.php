@@ -6,7 +6,6 @@ use Doctrine\ORM\EntityManager;
 
 class NotificationHelper
 {
-    private $notification;
     private $em;
     private $factory;
 
