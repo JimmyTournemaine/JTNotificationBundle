@@ -3,7 +3,6 @@ namespace JT\NotificationBundle\Factory;
 
 use Doctrine\Common\Proxy\Exception\InvalidArgumentException;
 use JT\NotificationBundle\Builder\NotificationBuilderInterface;
-use JT\NotificationBundle\Entity\Notification;
 use JT\NotificationBundle\Notification\Type\AbstractType;
 
 class NotificationFactory
