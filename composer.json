@@ -1,13 +1,12 @@
 {
     "name" : "jimmytournemaine/notification-bundle",
     "description" : "Notification system integration",
-    "version": "1.0.0",
     "type" : "symfony-bundle",
     "keywords" : [
         "notification"
     ],
     "homepage" : "https://github.com/JimmyTournemaine/JTNotificationBundle",
-    "licence" : "MIT",
+    "license" : "MIT",
     "authors" : [
         {
             "name" : "Jimmy Tournemaine",
@@ -16,8 +15,14 @@
             "role" : "Developer"
         }
     ],
+    "support": {
+        "email": "jimmy.tournemaine@yahoo.fr",
+        "issues": "https://github.com/JimmyTournemaine/JTNotificationBundle/issues",
+        "source": "https://github.com/JimmyTournemaine/JTNotificationBundle/archive/master.zip",
+        "docs": "https://github.com/JimmyTournemaine/JTNotificationBundle/blob/master/README.md"
+    },
     "require" : {
-        "symfony/symfony" : ">=2.6"
+        "symfony/symfony" : "2.*,>=2.6||~3"
     },
     "autoload" : {
         "psr-4" : {
