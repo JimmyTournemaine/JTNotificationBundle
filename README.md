@@ -40,11 +40,24 @@ in the `app/AppKernel.php` file of your project:
 ##Step 3: Routing
 
 ```yaml
+# app/config/routing.yml
+
 jt_notification:
     resource: "@JTNotificationBundle/Resources/config/routing.yml"
 ```
 
-## Step 4: Update your database
+##Step 4: Link your user entity
+
+```yaml
+# app/config/config.yml
+
+doctrine:
+    orm:
+        resolve_target_entities:
+            JT\NotificationBundle\Model\NotifyableInterface: AppBundle\Entity\User
+```
+
+## Step 5: Update your database
 
 ```bash
 php bin/console doctrine:schema:update --force
